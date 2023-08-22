@@ -1,18 +1,21 @@
 <section id="welcome-index-when-where">
+<section id="welcome-index-venue">
+
+<h2>CEREMONIA</h2>
+</section>
+
   <div class="container">
     <div class="row">
-      <div class="col-md-12 text-center">
-        <h1 class="jumbotron-heading">Ceremonia</h1>
-      </div>
-    </div>
-    <div class="row">
+      <div class="offset-md-3 col-md-6">
+      <div class="row">
       <div class="col-md-6 text-center">
+
         <h2><%= link_to 'wedding.ics' do -%>
           <%= render partial: 'calendar_svg' %>
         <%- end %></h2>
         <p>
         <%= t :wedding_date %><br>
-          <strong>8:00pm</strong><br>
+          <strong>9:30pm</strong><br>
           &nbsp;<br>
         </p>
         <!-- TODO
@@ -20,6 +23,7 @@
         <p><%= link_to 'Add to Calendar', 'wedding.ics' %></p>
         -->
       </div>
+
       <div class="col-md-6 text-center">
         <h2><%= link_to @google_maps_url do -%>
           <%= render partial: 'map_marker_svg' %>
