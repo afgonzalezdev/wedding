@@ -4,6 +4,7 @@
 <h2>CEREMONIA</h2>
 </section>
 
+
   <div class="container">
     <div class="row">
       <div class="offset-md-3 col-md-6">
@@ -13,11 +14,12 @@
         <h2><%= link_to 'wedding.ics' do -%>
           <%= render partial: 'calendar_svg' %>
         <%- end %></h2>
-        <p>
+        <div class="text-center">
         <%= t :wedding_date %><br>
+
           <strong>8:00pm</strong><br>
-          &nbsp;<br>
-        </p>
+          </div>
+
         <!-- TODO
 
         <p><%= link_to 'Add to Calendar', 'wedding.ics' %></p>

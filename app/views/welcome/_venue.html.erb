@@ -2,6 +2,8 @@
   <div class="container">
     <h1>FIESTA!</h1>
   </div>
+  <h2>Como llego?</h2>
+
 </section>
 <section id="welcome-index-venue">
 <h2>Como llego?</h2>
@@ -15,11 +17,13 @@
         <h2><%= link_to 'wedding.ics' do -%>
           <%= render partial: 'calendar_svg' %>
         <%- end %></h2>
-        <p>
+        
+        <div class="text-center">
         <%= t :wedding_date %><br>
+
           <strong>9:30pm</strong><br>
+          </div>
           &nbsp;<br>
-        </p>
         <!-- TODO
 
         <p><%= link_to 'Add to Calendar', 'wedding.ics' %></p>
