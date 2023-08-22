@@ -22,9 +22,9 @@
       <div class="row guests-buttons">
         <div class="offset-md-3 col-md-6 text-center">
           <%- if ENV['RECAPTCHA_SECRET_KEY'].blank? -%>
-          <%= form.submit 'Continue', class: 'btn btn-primary', data: { disable_with: 'Enviando...' } %>
+          <%= form.submit 'Continuar', class: 'btn btn-primary', data: { disable_with: 'Enviando...' } %>
           <%- else -%>
-          <%= invisible_recaptcha_tags text: 'Continue', class: 'btn btn-primary', data: { disable_with: 'Enviando...' } %>
+          <%= invisible_recaptcha_tags text: 'Continuar', class: 'btn btn-primary', data: { disable_with: 'Enviando...' } %>
           <%- end -%>
         </div>
       </div>
