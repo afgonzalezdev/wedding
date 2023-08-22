@@ -4280,3 +4280,213 @@ Processing by GuestsController#new as HTML
 Completed 200 OK in 350ms (Views: 328.8ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (292.4ms)[0m  [1m[35mCREATE DATABASE "wedding_development" ENCODING = 'unicode'[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (294.8ms)[0m  [1m[35mCREATE DATABASE "wedding_test" ENCODING = 'unicode'[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7833516671800140300)[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateGuests (20180324193210)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "guests" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180324193210_create_guests.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180324193210"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to DeviseCreateAdminUsers (20180324195732)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180324195732_devise_create_admin_users.rb:5
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_email" ON "admin_users"  ("email")[0m
+  ↳ db/migrate/20180324195732_devise_create_admin_users.rb:38
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admin_users_on_reset_password_token" ON "admin_users"  ("reset_password_token")[0m
+  ↳ db/migrate/20180324195732_devise_create_admin_users.rb:39
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180324195732"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateActiveAdminComments (20180324195736)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "active_admin_comments" ("id" bigserial primary key, "namespace" character varying, "body" text, "resource_type" character varying, "resource_id" bigint, "author_type" character varying, "author_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180324195736_create_active_admin_comments.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments"  ("resource_type", "resource_id")[0m
+  ↳ db/migrate/20180324195736_create_active_admin_comments.rb:5
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments"  ("author_type", "author_id")[0m
+  ↳ db/migrate/20180324195736_create_active_admin_comments.rb:5
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_active_admin_comments_on_namespace" ON "active_admin_comments"  ("namespace")[0m
+  ↳ db/migrate/20180324195736_create_active_admin_comments.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180324195736"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to AddGuestInfo (20180325090310)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35mSQL (8.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "citext"[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:5
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "guests" ALTER COLUMN "email" TYPE citext, ALTER COLUMN "email" SET NOT NULL[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:8
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_guests_on_email" ON "guests"  ("email")[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "guests" ADD "token" character varying NOT NULL[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "guests" ADD "attending" boolean[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "guests" ADD "diet" integer[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "guests" ADD "other_diet" character varying[0m
+  ↳ db/migrate/20180325090310_add_guest_info.rb:14
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180325090310"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreatePlusOnes (20180325135427)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "plus_ones" ("id" bigserial primary key, "guest_id" bigint, "name" character varying, "diet" integer, "other_diet" character varying, "child" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6d1fbc94f5"
+FOREIGN KEY ("guest_id")
+  REFERENCES "guests" ("id")
+)[0m
+  ↳ db/migrate/20180325135427_create_plus_ones.rb:5
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_plus_ones_on_guest_id" ON "plus_ones"  ("guest_id")[0m
+  ↳ db/migrate/20180325135427_create_plus_ones.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180325135427"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to SimplifyDiet (20180325202641)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "guests" DROP COLUMN "other_diet"[0m
+  ↳ db/migrate/20180325202641_simplify_diet.rb:6
+  [1m[35m (4.7ms)[0m  [1m[35mALTER TABLE "guests" ALTER COLUMN "diet" TYPE character varying[0m
+  ↳ db/migrate/20180325202641_simplify_diet.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "guests" ADD "songs" character varying[0m
+  ↳ db/migrate/20180325202641_simplify_diet.rb:8
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "plus_ones" DROP COLUMN "other_diet"[0m
+  ↳ db/migrate/20180325202641_simplify_diet.rb:12
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "plus_ones" ALTER COLUMN "diet" TYPE character varying[0m
+  ↳ db/migrate/20180325202641_simplify_diet.rb:13
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180325202641"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to AddGuestNotes (20180325212232)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "guests" ADD "notes" character varying[0m
+  ↳ db/migrate/20180325212232_add_guest_notes.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180325212232"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to AddFirstNameLastNameToGuest (20180329080019)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "guests" DROP COLUMN "name"[0m
+  ↳ db/migrate/20180329080019_add_first_name_last_name_to_guest.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "guests" ADD "first_name" character varying[0m
+  ↳ db/migrate/20180329080019_add_first_name_last_name_to_guest.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "guests" ADD "last_name" character varying[0m
+  ↳ db/migrate/20180329080019_add_first_name_last_name_to_guest.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180329080019"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to AddFirstNameLastNameToPlusOne (20180329080718)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "plus_ones" DROP COLUMN "name"[0m
+  ↳ db/migrate/20180329080718_add_first_name_last_name_to_plus_one.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "plus_ones" ADD "first_name" character varying[0m
+  ↳ db/migrate/20180329080718_add_first_name_last_name_to_plus_one.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "plus_ones" ADD "last_name" character varying[0m
+  ↳ db/migrate/20180329080718_add_first_name_last_name_to_plus_one.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180329080718"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to AddConfirmedAtToGuests (20180329212947)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "guests" ADD "confirmed_at" timestamp[0m
+  ↳ db/migrate/20180329212947_add_confirmed_at_to_guests.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180329212947"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateAttendees (20180804103058)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE VIEW "attendees" AS SELECT
+  id::text,
+  first_name, last_name, email,
+  diet, songs, notes, NULL as child,
+  updated_at
+FROM guests
+WHERE attending
+
+UNION ALL
+
+SELECT
+  guest_id || '-' || plus_ones.id AS id,
+  plus_ones.first_name, plus_ones.last_name, NULL AS email,
+  plus_ones.diet, NULL as songs, NULL as notes, plus_ones.child,
+  plus_ones.updated_at
+FROM plus_ones
+JOIN guests ON plus_ones.guest_id = guests.id
+WHERE guests.attending
+;[0m
+  ↳ db/migrate/20180804103058_create_attendees.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180804103058"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-08-22 01:19:46.367463"], ["updated_at", "2023-08-22 01:19:46.367463"]]
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7833516671800140300)[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.1ms)[0m  [1m[34m            SELECT
+              c.relname as viewname,
+              pg_get_viewdef(c.oid) AS definition,
+              c.relkind AS kind,
+              n.nspname AS namespace
+            FROM pg_class c
+              LEFT JOIN pg_namespace n ON n.oid = c.relnamespace
+            WHERE
+              c.relkind IN ('m', 'v')
+              AND c.relname NOT IN (SELECT extname FROM pg_extension)
+              AND n.nspname = ANY (current_schemas(false))
+            ORDER BY c.oid
+[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "admin_users"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mAdminUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = $1 LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mAdminUser Create (0.6ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "admin@example.com"], ["encrypted_password", "$2a$11$ukOMsJaWyMTrpbSgFGsHs.1Oqh.yNX.pcpaeBayL57mTUFjH7ymeq"], ["created_at", "2023-08-22 01:19:54.316570"], ["updated_at", "2023-08-22 01:19:54.316570"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
