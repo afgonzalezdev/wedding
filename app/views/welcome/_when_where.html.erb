@@ -1,8 +1,9 @@
 <section id="welcome-index-when-where">
 <section id="welcome-index-venue">
 
-<h2>CEREMONIA</h2>
 </section>
+<section id="welcome-index-venue">
+<h2>CEREMONIA</h2>
 
 
   <div class="container">
@@ -11,17 +12,17 @@
       <div class="row">
       <div class="col-md-6 text-center">
 
-        <h2><%= link_to 'wedding.ics' do -%>
-          <%= render partial: 'calendar_svg' %>
-        <%- end %></h2>
-        <div class="text-center">
-        <%= t :wedding_date %><br>
+      <h2><%= link_to 'wedding.ics' do -%>
+        <%= render partial: 'calendar_svg' %>
+      <%- end %></h2>
+      
+      <div class="text-center">
+      <%= t :wedding_date %><br>
 
-          <strong>8:00pm</strong><br>
-          </div>
-
-        <!-- TODO
-
+        <strong>8:00pm</strong><br>
+        </div>
+        &nbsp;<br>
+      <!-- TODO
         <p><%= link_to 'Add to Calendar', 'wedding.ics' %></p>
         -->
       </div>
