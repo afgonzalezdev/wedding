@@ -1,11 +1,11 @@
 <p><%= @guest.email_safe_salutation %></p>
 
 <% if @guest.attending %>
-<p>Estamos muy contentos que asistas a la fiesta!</p>
-<p>La ceremonia comienza a las 20:00 y la direccion es:</p>
+<p>Estamos muy contentos que vengas a nuestro casamiento!</p>
+<p>La ceremonia empieza a las 20:00 y la direccion es:</p>
 <address><%= render partial: 'application/wedding_address' %></address>
 <p></p>
-<p>La fiesta comienza a las 21:30 y la direccion es:</p>
+<p>El festeja empieza a las 21:30 y la direccion es:</p>
 <address><%= render partial: 'application/party_address' %></address>
 
 <h3>Tu RSVP</h3>

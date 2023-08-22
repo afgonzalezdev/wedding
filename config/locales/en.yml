@@ -30,8 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  wedding_name: "Casamiento Andres & Feli"
-  wedding_couple_names: 'Andres & Feli'
+  wedding_name: "Casamiento Feli & Andres"
+  wedding_couple_names: 'Feli & Andres'
   wedding_date: 'Sabado, 16 de Diciembre de 2023'
   wedding_location: 'Bella Vista'
   photo_credits: 'Fotos'
