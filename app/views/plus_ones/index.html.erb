@@ -13,9 +13,11 @@
       <% else %>
         <p>No se agrego acompañante.</p>
       <% end %>
-      <p>
-        <%= link_to 'Agregar acompañante', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
-      </p>
+      <% if @plus_ones.count == 0 || ["gonzalez", "azar", "romero", "romero victorica", "victorica", "lopez", "lopez arias", "barrera", "fernandez", "bordenave"].include?(@guest.last_name.downcase) %>
+<p>
+    <%= link_to 'Agregar acompañante', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
+</p>
+<% end %>
 
       <p>&nbsp;</p>
       <p class="guests-buttons">
