@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-lg-2 col-lg-8">
+      <%= render partial: 'guests/leader' %>
+      <%= render partial: 'guests/rsvp_nav', locals: { active: 2 } %>
+
+      <h2>Acompañante</h2>
+      <p>Por favor indicanos si traes algun acompañante.
+      <p>&nbsp;</p>
+
+      <% if @plus_ones.any? %>
+        <%= render @plus_ones %>
+      <% else %>
+        <p>No se agrego acompañante.</p>
+      <% end %>
+      <p>
+        <%= link_to 'Agregar acompañante', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
+      </p>
+
+      <p>&nbsp;</p>
+      <p class="guests-buttons">
+        <%= link_to 'Continue', confirm_guest_path(@guest), class: 'btn btn-primary' %>
+      </p>
+    </div>
+  </div>
+</div>

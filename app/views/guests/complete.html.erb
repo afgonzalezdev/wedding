@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-lg-2 col-lg-8">
+      <%= render partial: 'leader' %>
+      <h2>Gracias!</h2>
+      <p>Te enviamos un mail a <tt><%= @guest.email %></tt>.</p>
+      <p>Si no lo recibis en 5 minutos, revisa la carpeta de SPAM <%= mail_to ENV['CONTACT_EMAIL'], 'contactanos' %>.</p>
+      <p>El mail contiene un link donde vas a poder actualizar tu RSVP si lo necesitaras.</p>
+      <p><%= link_to 'Volver a la pagina principal', root_path %></p>
+    </div>
+  </div>
+</div>

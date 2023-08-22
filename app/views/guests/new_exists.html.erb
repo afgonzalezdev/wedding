@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="offset-lg-2 col-lg-8">
+      <%= render partial: 'leader' %>
+      <h2>HOLA, OTRA VEZ!</h2>
+      <p>Parece que ya registraste tu RSVP. Asi que te enviamos un link para que puedas actualizarlo.</p>
+      <p>Por favor checkea tu mail: <tt><%= @guest.email %></tt> incluso la carpeta SPAM!</p>
+      <p>Si no recibis tu mail por favor <%= mail_to ENV['CONTACT_EMAIL'], 'contactanos' %>.</p>
+    </div>
+  </div>
+</div>
