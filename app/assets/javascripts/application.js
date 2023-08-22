@@ -17,3 +17,13 @@
 
 //= require_tree .
 //= stub active_admin
+document.addEventListener("DOMContentLoaded", function() {
+    const targetElement = document.getElementById('wedding-header');
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+  
