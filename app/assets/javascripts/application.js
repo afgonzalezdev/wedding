@@ -53,3 +53,35 @@ Math.easeInOutQuad = function (t, b, c, d) {
   t--;
   return -c / 2 * (t * (t - 2) - 1) + b;
 };
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const countdownElement = document.getElementById('countdown');
+    const weddingTime = new Date('2023-12-16T20:00:00'); // Hardcoded date and time
+
+    function updateCountdown() {
+        const now = new Date();
+        const diffInSeconds = (weddingTime - now) / 1000; // Convert milliseconds to seconds
+
+        const fullDays = Math.floor(diffInSeconds / (24 * 60 * 60));
+        const remainingSecondsAfterDays = diffInSeconds - (fullDays * 24 * 60 * 60);
+
+        const hours = Math.floor(remainingSecondsAfterDays / (60 * 60));
+        const remainingSecondsAfterHours = remainingSecondsAfterDays - (hours * 60 * 60);
+
+        const minutes = Math.floor(remainingSecondsAfterHours / 60);
+        const seconds = Math.floor(remainingSecondsAfterHours - (minutes * 60));
+
+        document.getElementById('days').textContent = fullDays;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+    }
+
+    // Initial update
+    updateCountdown();
+
+    // Update every second
+    setInterval(updateCountdown, 1000);
+});
+
