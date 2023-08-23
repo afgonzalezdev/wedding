@@ -1,24 +1,30 @@
-<p><%= @guest.email_safe_salutation %></p>
+<table style="width: 100%; max-width: 600px; margin: 0 auto; font-family: Arial, sans-serif;">
+  <tr>
+    <td style="padding: 20px;">
+      <p style="font-size: 18px;"><%= @guest.email_safe_salutation %></p>
 
-<% if @guest.attending %>
-<p>Estamos muy contentos que vengas a nuestro casamiento!</p>
-<p>La ceremonia empieza a las 20:00 y la direccion es:</p>
-<address><%= render partial: 'application/wedding_address' %></address>
-<p></p>
-<p>El festejo empieza a las 21:30 y la direccion es:</p>
-<address><%= render partial: 'application/party_address' %></address>
+      <% if @guest.attending %>
+        <p style="font-size: 16px; font-weight: bold; margin-top: 20px;">¡Estamos muy contentos de que vengas a nuestro casamiento!</p>
+        <p>La ceremonia empieza a las <strong>20:00</strong> y la dirección es:</p>
+        <address style="margin-left: 20px; font-style: italic;"><%= render partial: 'application/wedding_address' %></address>
 
-<h3>Tu RSVP</h3>
-<p>Si queres cambiar algo de tu RSVP podes hacerlo ingresando a:</p>
-<p><%= link_to guest_url(@guest), guest_url(@guest) %></p>
+        <p style="margin-top: 20px;">El festejo empieza a las <strong>21:30</strong> y la dirección es:</p>
+        <address style="margin-left: 20px; font-style: italic;"><%= render partial: 'application/party_address' %></address>
 
-<h3>Preguntas</h3>
-<p>Por favor, checkea <%= link_to 'nuestro sitio web', root_url %> para mas informacion o contactanos a este mail!.</p>
-<% else %>
-<p>Que lastima que no puedas venir! En caso de cambiar la decision:</p>
-<p><%= link_to guest_url(@guest), guest_url(@guest) %></p>
-<p>Muchas gracias!</p>
-<% end %>
+        <h3 style="font-size: 18px; border-bottom: 1px solid #ccc; padding-bottom: 10px;">Tu RSVP</h3>
+        <p>Si quieres cambiar algo de tu RSVP, puedes hacerlo ingresando a:</p>
+        <p><%= link_to guest_url(@guest), guest_url(@guest), style: "color: #007BFF; text-decoration: none;" %></p>
 
-<p>&nbsp;</p>
-<p><%= t :wedding_couple_names %></p>
+        <h3 style="font-size: 18px; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-top: 20px;">Preguntas</h3>
+        <p>Por favor, consulta <%= link_to 'nuestro sitio web', root_url, style: "color: #007BFF; text-decoration: none;" %> para más información o contáctanos a este mail.</p>
+
+      <% else %>
+        <p style="font-size: 16px;">Qué lástima que no puedas venir. Si cambias de opinión, puedes confirmar tu asistencia en:</p>
+        <p><%= link_to guest_url(@guest), guest_url(@guest), style: "color: #007BFF; text-decoration: none;" %></p>
+        <p>Muchas gracias.</p>
+      <% end %>
+
+      <p style="margin-top: 40px; border-top: 1px solid #ccc; padding-top: 20px; text-align: right;"><%= t :wedding_couple_names %></p>
+    </td>
+  </tr>
+</table>
