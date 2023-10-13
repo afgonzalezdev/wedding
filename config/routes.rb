@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   get 'welcome/index'
+  get 'welcome/serve_pdf', to: 'welcome#serve_pdf', as: 'serve_welcome_pdf'
 
   resources :guests do
     resources :plus_ones
@@ -17,4 +18,4 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+end 

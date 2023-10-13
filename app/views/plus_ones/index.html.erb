@@ -11,7 +11,7 @@
       <% if @plus_ones.any? %>
         <%= render @plus_ones %>
       <% else %>
-        <p>No se agrego acompañante.</p>
+        <p>No se agregó acompañante.</p>
       <% end %>
       <% if @plus_ones.count == 0 || ["gonzalez", "azar", "romero", "romero victorica", "victorica", "lopez", "lopez arias", "barrera", "fernandez", "bordenave"].include?(I18n.transliterate(@guest.last_name).downcase) %>
       <p>
