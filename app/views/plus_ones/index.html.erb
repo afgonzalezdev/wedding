@@ -13,7 +13,7 @@
       <% else %>
         <p>No se agregó acompañante.</p>
       <% end %>
-      <% if @plus_ones.count == 0 || ["gonzalez", "azar", "romero", "romero victorica", "victorica", "lopez", "lopez arias", "barrera", "fernandez", "bordenave"].include?(I18n.transliterate(@guest.last_name).downcase) %>
+      <% if @plus_ones.count == 0 || ["gonzalez", "azar", "romero", "brombini", "romero victorica", "victorica", "lopez", "lopez arias", "barrera", "fernandez", "bordenave"].include?(I18n.transliterate(@guest.last_name).downcase) %>
       <p>
     <%= link_to 'Agregar acompañante', new_guest_plus_one_path(@guest), class: 'btn btn-primary', data: { disable_with: 'Loading...' } %>
 </p>
